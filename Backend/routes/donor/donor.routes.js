@@ -1,7 +1,7 @@
-import { getProfile,updateAvailability,upsertProfile } from "../../controllers/donor/donor.controller";
+import { getProfile,updateAvailability,upsertProfile } from "../../controllers/donor/donor.controller.js";
 import express from "express"
-import authMiddleware from "../../middleware/auth.Middleware";
-import roleMiddleware from "../../middleware/role.middleware";
+import authMiddleware from "../../middleware/auth.Middleware.js";
+import roleMiddleware from "../../middleware/role.middleware.js";
 
 const router=express.Router()
 router.get("/profile",authMiddleware,roleMiddleware("DONOR"),getProfile)
