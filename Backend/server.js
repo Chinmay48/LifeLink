@@ -2,10 +2,11 @@ import express from "express"
 import "dotenv/config"
 import connectDB from "./config/db.js"
 import registerRoutes from "./routes/index.js"
+import expireDonationsJob from "./jobs/expiryDonation.job.js"
 const app=express()
 
 await connectDB()
-
+expireDonationsJob()
 app.use(express.json())
 
 registerRoutes(app)
