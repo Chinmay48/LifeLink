@@ -34,12 +34,12 @@ export const publicRoutes=[
 
 export const donorRoutes=[
     {
-        path:"/donor/dashboard",
+        path:"/dashboard",
         element:<DonorDashboard/>,
           role: "DONOR"
     },
     {
-        path:"/donor/profile",
+        path:"/profile",
         element:<DonorProfile/>,
           role: "DONOR"
     },
@@ -50,12 +50,12 @@ export const donorRoutes=[
 export const hospitalRoutes=[
 
     {
-        path:"/hospital/dashboard",
+        path:"/dashboard",
         element:<HospitalDashboard/>,
         role: "HOSPITAL"
     },
     {
-        path:"/hospital/profile",
+        path:"/profile",
         element:<HospitalProfile/>,
         role: "HOSPITAL"
     }
