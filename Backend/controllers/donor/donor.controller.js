@@ -1,4 +1,5 @@
 import Donor from "../../models/Donor.js";
+import User from "../../models/User.js";
 
 export const upsertProfile=async(req,res)=>{
     try {
@@ -8,6 +9,7 @@ export const upsertProfile=async(req,res)=>{
         }
 
         const donor=await Donor.findOneAndUpdate({userId},donorData,{new:true,upsert:true,runValidators:true})
+        await User.findByIdAndUpdate(userId,{profileCompleted:true})
         return res.status(200).json({success:true,message:"Donor created successfully",data:donor},)
     } catch (error) {
         return res.status(400).json({success:false,message:error.message})

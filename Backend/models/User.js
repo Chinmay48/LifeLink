@@ -7,6 +7,7 @@ const userSchema=new mongoose.Schema({
     isActive:{type:Boolean,required:true,default:true},
     isVerified:{type:Boolean,required:true,default:true},
     lastLoginAt:{type:Date,default:null},
+    profileCompleted:{type:Boolean,default:false},
     
 },{
     timestamps:true

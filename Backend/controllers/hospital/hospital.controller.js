@@ -1,4 +1,5 @@
 import Hospital from "../../models/Hospital.js";
+import User from "../../models/User.js";
 
 export const upsertHospitalProfile=async(req,res)=>{
   try {
@@ -8,6 +9,7 @@ export const upsertHospitalProfile=async(req,res)=>{
       }
 
       const hospital=await Hospital.findOneAndUpdate({userId},hospitalData,{new:true,upsert:true,runValidators:true});
+      await User.findByIdAndUpdate(userId,{profileCompleted:true})
       return res.status(200).json({success:true,message:"Hospital Details saved successfully",data:hospital})
   } catch (error) {
        return res.status(500).json({success:false,message:error.message})
