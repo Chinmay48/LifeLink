@@ -3,11 +3,15 @@ import './App.css'
 import AppRoutes from "./app/routes"
 import {ToastContainer} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
+import { AppProvider } from "./context/AppContext";
 function App() {
   return (
     <>
-  <AppRoutes/>
+    <AppProvider>
+<AppRoutes/>
   <ToastContainer position="top-right" />
+    </AppProvider>
+  
     </>
   )
 }
