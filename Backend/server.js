@@ -3,10 +3,17 @@ import "dotenv/config"
 import connectDB from "./config/db.js"
 import registerRoutes from "./routes/index.js"
 import expireDonationsJob from "./jobs/expiryDonation.job.js"
+import cors from "cors"
 const app=express()
 
 await connectDB()
 expireDonationsJob()
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 app.use(express.json())
 
 registerRoutes(app)
