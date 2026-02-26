@@ -11,12 +11,8 @@ export const useAuth = () => {
   const handleLogin = async (formData) => {
     
     try {
-      console.log("STEP 1: before API");
+    
       const res = await loginUser(formData);
-      
-      console.log("STEP 2: After API");
-      console.log(res)
-      
       login(res.user, res.token);
       toast.success(res.message || "Login successfully");
       if (!res.user.profileCompleted) {

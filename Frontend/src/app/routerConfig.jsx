@@ -7,6 +7,7 @@ import HospitalDashboard from "../pages/hospital/Dashboard";
 import HospitalProfile from "../pages/hospital/Profile";
 import Login from "../pages/public/Login";
 import Register from "../pages/public/Register";
+import Onboarding from "../pages/common/Onboarding";
 
 
 export const publicRoutes=[
@@ -21,6 +22,10 @@ export const publicRoutes=[
     {
         path:"/unauthorized",
         element:<Unauthorized/>
+    },
+    {
+        path:"/onboarding",
+        element:<Onboarding/>
     },
     {
         path:"/login",

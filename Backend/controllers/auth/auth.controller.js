@@ -14,7 +14,7 @@ export const register = async (req, res) => {
         .status(409)
         .json({ success: false, message: "User already exist" });
     }
-    const hashedPassword = hashPassword(password);
+    const hashedPassword = await hashPassword(password);
     const user = await User.create({
       email: email,
       password: hashedPassword,
