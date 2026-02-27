@@ -8,6 +8,10 @@ import { HeartPulse } from 'lucide-react'
 const Onboarding = () => {
   const { role } = useAppContext()
 
+  const slugToTitle=(slug="")=>{
+     return slug.split("_").map((word)=>word[0].toUpperCase()+word.slice(1,word.length).toLowerCase()).join(" ")
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#fff7ed] p-4 md:p-10 relative overflow-hidden">
       
@@ -31,14 +35,12 @@ const Onboarding = () => {
     </div>
 
     {/* Heading */}
-    <h1 className="text-3xl font-bold mb-4 leading-tight">
-      One last step to start saving lives.
-    </h1>
-
-    {/* Description */}
-    <p className="text-slate-300 text-sm leading-relaxed">
-      Complete your {role?.toLowerCase()} profile to join our network of heroes and healthcare providers.
-    </p>
+    <h2 className="text-4xl font-bold mb-6">Join the Life-Saving Network.</h2>
+            <p className="text-orange-100 leading-relaxed text-lg">
+              {role === "DONOR" 
+                ? "Your contribution can give someone a second chance at life. Let's get your profile ready." 
+                : "Help us streamline emergency response. Connect your facility to our real-time database."}
+            </p>
   </div>
 
   {/* Features */}
