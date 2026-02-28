@@ -8,6 +8,8 @@ import HospitalProfile from "../pages/hospital/Profile";
 import Login from "../pages/public/Login";
 import Register from "../pages/public/Register";
 import Onboarding from "../pages/common/Onboarding";
+import CreateDonation from "../pages/donor/donations/CreateDonation";
+import DonationHistory from "../pages/donor/donations/DonationHistory";
 
 
 export const publicRoutes=[
@@ -48,6 +50,18 @@ export const donorRoutes=[
         element:<DonorProfile/>,
           role: "DONOR"
     },
+    {
+        path:"donations/new",
+        element:<CreateDonation/>,
+        role:"DONOR"
+        
+    },
+    {
+        path:"donor-history",
+        element:<DonationHistory/>,
+        role:"DONOR"
+        
+    }
 
 ]
 
