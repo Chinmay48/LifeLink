@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-
+import { ORGAN_TYPES } from "../constants/Organ.js";
 const organSchema= new mongoose.Schema({
     
-    organType:{type:String,required:true,enum:["BLOOD","KIDNEY","HEART","LIVER","SKIN"],index:true},
+    organType:{type:String,required:true,enum:ORGAN_TYPES,index:true},
     donorId:{type:mongoose.Schema.Types.ObjectId,ref:"Donor",required:true,index:true},
     subType:{type:mongoose.Schema.Types.Mixed,required:true},
      isSingleUse: {

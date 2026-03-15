@@ -9,7 +9,7 @@ import donationSearchRoutes from "./hospital/donationSearch.routes.js"
 const registerRoutes=(app)=>{
     app.use("/auth",authRoutes)
     app.use("/donor",donorRoutes)
-    app.use("/donation",donationRoutes)
+    app.use("/donor/donations",donationRoutes)
     app.use("/hospital",hosipitalRoutes)
     app.use("/patients",patientRoutes)
     app.use("/organ-bank",organBankRoutes)

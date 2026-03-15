@@ -1,0 +1,47 @@
+{
+  "BLOOD": {
+    "icon": "GiDroplets",
+    "color": "#ef4444",
+    "subTypes": ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-", "PLASMA", "PLATELETS", "RED_CELLS", "CRYOPRECIPITATE"]
+  },
+  "KIDNEY": {
+    "icon": "GiKidneys",
+    "color": "#f97316",
+    "subTypes": ["LEFT_KIDNEY", "RIGHT_KIDNEY", "SINGLE_KIDNEY", "PAIRED_KIDNEY"]
+  },
+  "HEART": {
+    "icon": "GiHeartOrgan",
+    "color": "#dc2626",
+    "subTypes": ["WHOLE_HEART", "ADULT_HEART", "PEDIATRIC_HEART"]
+  },
+  "LIVER": {
+    "icon": "GiLiver",
+    "color": "#8b5cf6",
+    "subTypes": ["WHOLE_LIVER", "LEFT_LOBE", "RIGHT_LOBE", "SEGMENT"]
+  },
+  "SKIN": {
+    "icon": "GiHumanSkin",
+    "color": "#fbbf24",
+    "subTypes": ["SPLIT_THICKNESS", "FULL_THICKNESS", "DERMAL_LAYER", "EPIDERMAL_LAYER"]
+  },
+  "LUNG": {
+    "icon": "GiLungs",
+    "color": "#06b6d4",
+    "subTypes": ["LEFT_LUNG", "RIGHT_LUNG", "DOUBLE_LUNG"]
+  },
+  "CORNEA": {
+    "icon": "GiEyeball",
+    "color": "#3b82f6",
+    "subTypes": ["LEFT_CORNEA", "RIGHT_CORNEA"]
+  },
+  "PANCREAS": {
+    "icon": "GiStomach",
+    "color": "#10b981",
+    "subTypes": ["WHOLE_PANCREAS", "PANCREATIC_ISLETS"]
+  },
+  "BONE": {
+    "icon": "LuBone",
+    "color": "#94a3b8",
+    "subTypes": ["FEMUR", "TIBIA", "HUMERUS", "BONE_MARROW"]
+  }
+}

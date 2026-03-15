@@ -16,7 +16,7 @@ export const updateAvailability=(isAvailable)=>{
 
 
 export const createDonation=(data)=>{
-    return axiosInstance.post("/donor/donations",data)
+    return axiosInstance.post("/donor/donations/create",data)
 }
 
 export const getDonationHistory=()=>{

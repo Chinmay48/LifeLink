@@ -38,7 +38,7 @@ const DonorProfile = () => {
       if (res.data.location) {
         setLocation(res.data.location);
       }
-      console.log(res);
+      
     } catch (error) {
       showError(error.message);
     } finally {
