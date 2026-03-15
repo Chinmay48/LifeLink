@@ -5,6 +5,6 @@ import roleMiddleware from "../../middleware/role.middleware.js"
 
 const router=express.Router();
 router.post("/create",authMiddleware,roleMiddleware("DONOR"),createDonation);
-router.get("/",authMiddleware,roleMiddleware("DONOR",getMyDonations));
+router.get("/",authMiddleware,roleMiddleware("DONOR"),getMyDonations);
 
 export default  router
