@@ -47,6 +47,51 @@ export const createDonation = async (req, res) => {
       });
     }
 
+    if(organType==="BLOOD"){
+      const lastBloodOrgan = await Organ.findOne({
+  donorId: donor._id,
+  organType: "BLOOD",
+})
+.sort({ createdAt: -1 })
+.session(session);
+
+if (lastBloodOrgan) {
+  const lastBloodDonation = await Donation.findOne({
+    organId: lastBloodOrgan._id,
+  }).session(session);
+
+  if (lastBloodDonation) {
+    const lastDate = new Date(lastBloodDonation.createdAt);
+    const now = new Date();
+
+    const diffInDays = (now - lastDate) / (1000 * 60 * 60 * 24);
+
+    if (diffInDays < 90) {
+      await session.abortTransaction();
+      return res.status(400).json({
+        success: false,
+        message:
+          "You can donate blood only after 3 months from last donation",
+      });
+    }
+  }
+}
+
+    }
+    else{
+      const existingOrgan=await Organ.findOne({
+        donorId:donor._id,
+        organType,
+        isActive:true,
+      }).session(session)
+      if(existingOrgan){
+        await session.abortTransaction()
+        return res.status(400).json({
+          success:false,message:`You have already registered a ${organType} donation`
+        })
+      }
+    }
+
     const organ = await Organ.create(
       [
         {
