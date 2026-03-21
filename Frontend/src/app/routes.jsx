@@ -29,7 +29,7 @@ const AppRoutes = () => {
       <Route
         path="/hospital"
         element={
-          <ProtectedRoute allowedRole="HOSPITAL">
+          <ProtectedRoute allowedRole="HOSPITAL_ADMIN">
             <HospitalLayout />
           </ProtectedRoute>
         }

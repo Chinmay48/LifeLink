@@ -10,6 +10,9 @@ import Register from "../pages/public/Register";
 import Onboarding from "../pages/common/Onboarding";
 import CreateDonation from "../pages/donor/donations/CreateDonation";
 import DonationHistory from "../pages/donor/donations/DonationHistory";
+import CreatePatient from "../pages/hospital/patients/CreatePatient";
+import PatientList from "../pages/hospital/patients/PatientList";
+import OrganBank from "../pages/hospital/OrganBank";
 
 
 export const publicRoutes=[
@@ -65,17 +68,30 @@ export const donorRoutes=[
 
 ]
 
-
 export const hospitalRoutes=[
 
     {
         path:"dashboard",
         element:<HospitalDashboard/>,
-        role: "HOSPITAL"
+        role: "HOSPITAL_ADMIN"
     },
     {
         path:"profile",
         element:<HospitalProfile/>,
-        role: "HOSPITAL"
+        role: "HOSPITAL_ADMIN"
+    },{
+        path:"patient/new",
+        element:<CreatePatient/>,
+        role:"HOSPITAL_ADMIN"
+    },
+    {
+        path:"patients",
+        element:<PatientList/>,
+        role:"HOSPITAL_ADMIN"
+    },
+    {
+        path:"organ-bank",
+        element:<OrganBank/>,
+        role:"HOSPITAL_ADMIN"
     }
 ]
