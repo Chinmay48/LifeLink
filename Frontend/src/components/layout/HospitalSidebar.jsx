@@ -28,7 +28,7 @@ const HospitalSidebar = ({ isOpen, setIsOpen }) => {
       try {
         const res = await getHospitalProfile();
         setHospital(res.data);
-        console.log(res.data)
+        
       } catch (error) {
         toast.error(error.message);
       }

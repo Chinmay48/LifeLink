@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import { ORGAN_TYPES } from "../constants/Organ.js";
 const organBankSchema = new mongoose.Schema(
   {
     hospitalId: {
@@ -11,7 +11,7 @@ const organBankSchema = new mongoose.Schema(
 
     organType: {
       type: String,
-      enum: ["BLOOD", "KIDNEY", "HEART", "LIVER", "SKIN"],
+      enum: ORGAN_TYPES,
       required: true,
       index: true,
     },
@@ -30,7 +30,7 @@ const organBankSchema = new mongoose.Schema(
       },
     ],
   },
-  {
+  {   
     timestamps: true,
   }
 );
