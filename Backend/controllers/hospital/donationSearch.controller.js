@@ -1,5 +1,5 @@
 import Donation from "../../models/Donation.js";
-import Organ from "../../models/Organ.js";
+
 
 export const searchAvailableDonations = async (req, res) => {
   try {
@@ -21,6 +21,18 @@ export const searchAvailableDonations = async (req, res) => {
     const now = new Date();
 
     const donations = await Donation.aggregate([
+      {
+        $geoNear: {
+          near: {
+            type: "Point",
+            coordinates: [parseFloat(lng), parseFloat(lat)],
+          },
+          distanceField: "distance",
+          maxDistance: parseFloat(radius) * 1000,
+          spherical: true,
+          key: "donor.location",
+        },
+      },
       {
         $match: {
           status: "AVAILABLE",
@@ -51,18 +63,7 @@ export const searchAvailableDonations = async (req, res) => {
         },
       },
       { $unwind: "$donor" },
-      {
-        $geoNear: {
-          near: {
-            type: "Point",
-            coordinates: [parseFloat(lng), parseFloat(lat)],
-          },
-          distanceField: "distance",
-          maxDistance: parseFloat(radius) * 1000,
-          spherical: true,
-          key: "donor.location",
-        },
-      },
+      
       {
         $project: {
           status: 1,

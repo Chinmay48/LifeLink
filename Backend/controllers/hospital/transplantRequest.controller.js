@@ -35,7 +35,7 @@ export const createTransplantRequest = async (req, res) => {
       hospitalId: hospital._id,
       organType,
     });
-    if (inventory || inventory.availableCount > 0) {
+    if (inventory && inventory.availableCount > 0) {
       return res.status(400).json({
         success: false,
         message:
@@ -65,7 +65,7 @@ export const createTransplantRequest = async (req, res) => {
 
 export const matchDonationToRequest = async (req, res) => {
   try {
-    const hospital = await Hospital({ userId: req.user.id });
+    const hospital = await Hospital.findOne({ userId: req.user.id });
     if (!hospital) {
       return res
         .status(404)

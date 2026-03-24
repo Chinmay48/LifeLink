@@ -84,7 +84,7 @@ const CreatePatient = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl shadow-orange-100 overflow-hidden border border-orange-100"
+        className="max-full mx-auto bg-white rounded-3xl shadow-xl shadow-orange-100 overflow-hidden border border-orange-100"
       >
         {/* Header Section */}
         <div className="bg-orange-600 p-8 text-white text-center relative overflow-hidden">
