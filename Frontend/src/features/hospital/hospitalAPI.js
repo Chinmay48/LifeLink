@@ -27,3 +27,7 @@ export const getInventory=()=>{
 export const updateInventoryStock=(organType,delta)=>{
     return axiosInstance.patch(`/organ-bank/${organType}`,{delta});
 }
+
+export const searchDonations=()=>{
+    return axiosInstance.get("/hospital/donations/search")
+}

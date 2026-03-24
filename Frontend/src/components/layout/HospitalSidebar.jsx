@@ -5,7 +5,8 @@ import {
   History,
   LogOut,
   Hospital,
-  ChevronRight,User
+  ChevronRight,
+  User,UserSearch,ArrowRightLeft,MessageSquareDiff,UserCheck
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -28,7 +29,6 @@ const HospitalSidebar = ({ isOpen, setIsOpen }) => {
       try {
         const res = await getHospitalProfile();
         setHospital(res.data);
-        
       } catch (error) {
         toast.error(error.message);
       }
@@ -44,8 +44,12 @@ const HospitalSidebar = ({ isOpen, setIsOpen }) => {
       path: "/hospital/patient/new",
     },
     { name: "Patient History", icon: History, path: "/hospital/patients" },
+     {name:"Find Donor",icon:UserSearch,path:"/hospital/search-donor"},
+      {name:"Transplant Request",icon:ArrowRightLeft,path:"/hospital/organ-bank"},
+       {name:"Match Requests",icon:MessageSquareDiff,path:"/hospital/organ-bank"},
+    { name: "Completed Transplants", icon: UserCheck, path: "/hospital/organ-bank" },
+    { name: "Organ Bank", icon: Hospital, path: "/hospital/organ-bank" },
     { name: "Profile", icon: User, path: "/hospital/profile" },
-    {name:"Organ Bank",icon:Hospital,path:"/hospital/organ-bank"}
   ];
   return (
     <div>

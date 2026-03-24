@@ -13,6 +13,7 @@ import DonationHistory from "../pages/donor/donations/DonationHistory";
 import CreatePatient from "../pages/hospital/patients/CreatePatient";
 import PatientList from "../pages/hospital/patients/PatientList";
 import OrganBank from "../pages/hospital/OrganBank";
+import SearchDonations from "../pages/hospital/donations/SearchDonations";
 
 
 export const publicRoutes=[
@@ -92,6 +93,11 @@ export const hospitalRoutes=[
     {
         path:"organ-bank",
         element:<OrganBank/>,
+        role:"HOSPITAL_ADMIN"
+    },
+    {
+        path:"search-donor",
+        element:<SearchDonations/>,
         role:"HOSPITAL_ADMIN"
     }
 ]
