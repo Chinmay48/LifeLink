@@ -14,6 +14,8 @@ import CreatePatient from "../pages/hospital/patients/CreatePatient";
 import PatientList from "../pages/hospital/patients/PatientList";
 import OrganBank from "../pages/hospital/OrganBank";
 import SearchDonations from "../pages/hospital/donations/SearchDonations";
+import TransplantRequests from "../pages/hospital/transplant/TransplantRequests";
+import RequestDetails from "../pages/hospital/transplant/RequestDetails";
 
 
 export const publicRoutes=[
@@ -98,6 +100,14 @@ export const hospitalRoutes=[
     {
         path:"search-donor",
         element:<SearchDonations/>,
+        role:"HOSPITAL_ADMIN"
+    },{
+        path:"transplant-request",
+        element:<TransplantRequests/>,
+        role:"HOSPITAL_ADMIN"
+    },{
+        path:"match-request",
+        element:<RequestDetails/>,
         role:"HOSPITAL_ADMIN"
     }
 ]

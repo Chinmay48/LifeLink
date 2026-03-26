@@ -28,6 +28,6 @@ export const updateInventoryStock=(organType,delta)=>{
     return axiosInstance.patch(`/organ-bank/${organType}`,{delta});
 }
 
-export const searchDonations=()=>{
-    return axiosInstance.get("/hospital/donations/search")
+export const searchDonations=(data)=>{
+    return axiosInstance.get("/hospital/donations/search",data)
 }
